@@ -10,10 +10,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     print(f"------- Sorting Numerical Dataset ---------")
     while True: 
         #print("Please type in the kind of sorting you want to perform along with a list of numbers: \n Ascending \n Descending")
-        MSG = input("Please type in the kind of sorting you want to perform along with a list of numbers: \n Ascending \n Descending")
+        MSG = input("Please type in the kind of sorting you want to perform along with a list of numbers: \n Ascending \n Descending\n")
         if not MSG: 
             break 
         print(f"Sending message... '{MSG}'")
         s.sendall(bytes(MSG, 'utf-8'))
         print('message sent, waiting for reply"')
-        s.sendall()
