@@ -28,8 +28,6 @@ def main():
         print(f"connection established")
         print(f"------- Sorting Numerical Dataset ---------")
         #ask user for input from keyboard. 
-
-
         MSG = input("Please type in the kind of sorting you want to perform AND the list of numbers to sort: \n-Ascending \n-Descending\n-Enter to exit\n")
         final_response = encode_message(MSG, s) #encode and send the message 
 
