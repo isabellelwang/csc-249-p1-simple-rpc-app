@@ -17,6 +17,14 @@ You must submit these work products:
 
 Overview of Application: 
 
+The Sorting RPC Client-Server App has two files-- sorting-client.py and sorting-server.py. In the sorting client.py, there is a user input from the keyboard for two operations: Ascending and Descending, along with a list of numbers (floats). 
+
+First, the sockets are the user the prompted to type in a command in the keyboard: Ascending/Descending followed by a list of numbers (e.g. Ascending 1 2 31.2 34 4121.2). Then this message is encoded in utf-8 and sent to the server. The server receives the message and decodes it. Then the data is converted into a string so it split each component of the message by a space " " into a list. The program will make a new list but lowercase each string value to handle case sensitivity/capitalization errors. 
+
+Afterwards, the program will search for the command ("ascending/descending") in the list to provide the requested computation. Then it takes the list of string numbers and sorts it as floats. If the ascending and descending command is correctly spelled, then a new variable response will store the sorted list of numbers. Otherwise, the response variable will store "Invalid Operation/Spelling", to prevent program crashes. The sorted list is encoded again and sent back to the client. 
+
+
+
 
 
 

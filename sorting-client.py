@@ -16,6 +16,8 @@ def encode_message(MSG, so):
     print('message sent, waiting for reply"')
     response = so.recv(1024) # Receives the response with the computations applied 
     print (f"Received server message: '{response!r}' [{len(response)} bytes]")
+
+    return response 
         
 def main(): 
     print("client starting - connecting to server at IP", HOST, "and port", PORT)
@@ -26,8 +28,10 @@ def main():
         print(f"connection established")
         print(f"------- Sorting Numerical Dataset ---------")
         #ask user for input from keyboard. 
+
+
         MSG = input("Please type in the kind of sorting you want to perform AND the list of numbers to sort: \n-Ascending \n-Descending\n-Enter to exit\n")
-        encode_message(MSG, s) #encode and send the message 
+        final_response = encode_message(MSG, s) #encode and send the message 
 
     print(f"client is done!")
 

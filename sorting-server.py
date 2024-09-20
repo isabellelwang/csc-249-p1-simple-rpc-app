@@ -20,19 +20,22 @@ def decode_message(data, c):
         print("requested sorting operation is ascending")
         number_list.remove("ascending") #remove ascending command from the list of numbers 
         print("request includes ", str(len(number_list)), " arguments: " + str(number_list))
-        number_list.sort(key=int) #sort the list of numbers as keys in ascneding order 
+        number_list.sort(key=float) #sort the list of numbers as keys in ascneding order 
+        response = str(number_list)
 
     elif "descending" in number_list: 
         print("requested sorting operation is descending")
         number_list.remove("descending") #remove descending command from the list of numbers 
         print("request includes ", str(len(number_list)), " arguments: " + str(number_list))
-        number_list.sort(key=int, reverse = True) #sort the list of numbers as keys in descneding order 
-        
+        number_list.sort(key=float, reverse = True) #sort the list of numbers as keys in descneding order 
+        response = str(number_list)
+
     else: 
-        print("Invalid Operation. Please Try Again.")
+        print("Invalid Operation/Spelling. Try Again.")
+        response = "Invalid Operation/Spelling."
     
-    print("sending result back to client: ", str(number_list))
-    c.sendall(bytes(str(number_list), 'utf-8')) #Send the sorted list as string as encoded data back to the client. 
+    print("sending result back to client: ", response)
+    c.sendall(bytes(response, 'utf-8')) #Send the sorted list as string as encoded data back to the client. 
     
 def main(): 
     print("client starting - connecting to server at IP", HOST, "and port", PORT)
